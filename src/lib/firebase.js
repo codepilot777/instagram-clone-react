@@ -1,0 +1,23 @@
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import 'firebase/auth';
+
+// here is where I want to call the seed file (only ONCE!)
+import { seedDatabase } from '../seed'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCb8TbnqTXzILRZKE2MC5YlAj4KdZrv14I",
+  authDomain: "instagram-clone-f858d.firebaseapp.com",
+  projectId: "instagram-clone-f858d",
+  storageBucket: "instagram-clone-f858d.appspot.com",
+  messagingSenderId: "153835861166",
+  appId: "1:153835861166:web:72fa7a5b92f2886abea93f"
+};
+
+export const firebase = initializeApp(firebaseConfig);
+export const db = getFirestore(firebase)
+// export const { FieldValue } = firestore;
+
+// here is where I want to call the seed file (only ONCE!)
+seedDatabase(db)
+
