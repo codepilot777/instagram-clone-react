@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import 'firebase/auth';
 
 // here is where I want to call the seed file (only ONCE!)
@@ -16,6 +17,24 @@ const firebaseConfig = {
 
 export const firebase = initializeApp(firebaseConfig);
 export const db = getFirestore(firebase)
+export const auth = getAuth();
+export const UserSignInWithEmailAndPassword = async (email, password) => {
+  try {
+    const UserCredential = await signInWithEmailAndPassword(auth, email,password);
+    return UserCredential.user
+  } catch (err) {
+    console.log(err)
+  }
+} 
+
+export const UserSignUpIwthEmailAndPassword = async (email, password) => {
+  try {
+    const UserCredential = await createUserWithEmailAndPassword(auth, email, password);
+    return UserCredential.user
+  } catch (err) {
+    console.log(err)
+  }
+}
 // export const { FieldValue } = firestore;
 
 // here is where I want to call the seed file (only ONCE!)
