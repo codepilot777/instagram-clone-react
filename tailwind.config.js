@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      white: '#fffff',
+      white: '#ffffff',
       blue: {
         medium: '#005c98'
       },

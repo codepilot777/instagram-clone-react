@@ -44,8 +44,8 @@ const Login = () => {
           </h1>
           { error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
           <form onSubmit={handleLogin} method="POST">
-            <input arial-label="Enter your email address" type="text" placeholder="Email address" className="w-full h-2 px-4 py-5 mb-2 mr-3 text-sm border rounded text-gray-base border-gray-primary" onChange={(e) => setEmailAddress(e.target.value)}/>
-            <input arial-label="Enter your password" type="password" placeholder="Password" className="w-full h-2 px-4 py-5 mb-2 mr-3 text-sm border rounded text-gray-base border-gray-primary" onChange={(e) => setPassword(e.target.value)}/>
+            <input arial-label="Enter your email address" type="text" placeholder="Email address" className="w-full h-2 px-4 py-5 mb-2 mr-3 text-sm border rounded text-gray-base border-gray-primary" onChange={(e) => setEmailAddress(e.target.value)} value={emailAddress} />
+            <input arial-label="Enter your password" type="password" placeholder="Password" className="w-full h-2 px-4 py-5 mb-2 mr-3 text-sm border rounded text-gray-base border-gray-primary" onChange={(e) => setPassword(e.target.value)} value={password} />
             <button disable={isInvalid} type="submit" className={`bg-blue-medium text-white w-full rounded h-8 font-bold ${isInvalid && "opacity-50"}`}>Log In</button>
           </form>
         </div>
